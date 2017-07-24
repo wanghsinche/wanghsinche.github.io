@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/23/solution1/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="一、1、说明伯努利模型极大似然估计伯努利模型：1$P(x; θ)= \&amp;#123; \table &amp;#123;θ,&amp;#125; , x = 1; &amp;#123;1-θ,&amp;#125; , x = 0$ n次独立试验，k次结果为1写出似然函数：1$Likehood: L(θ) = P(x_1,x_2,...,x_n|θ)$ 因为独立，所以有：1$P(x_1,x_2,...,x_n|θ) = P(x_1|">
-<meta property="og:updated_time" content="2017-07-24T09:14:10.059Z">
+<meta property="og:updated_time" content="2017-07-24T12:09:02.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="统计学习方法第一章习题解">
 <meta name="twitter:description" content="一、1、说明伯努利模型极大似然估计伯努利模型：1$P(x; θ)= \&amp;#123; \table &amp;#123;θ,&amp;#125; , x = 1; &amp;#123;1-θ,&amp;#125; , x = 0$ n次独立试验，k次结果为1写出似然函数：1$Likehood: L(θ) = P(x_1,x_2,...,x_n|θ)$ 因为独立，所以有：1$P(x_1,x_2,...,x_n|θ) = P(x_1|">
@@ -115,8 +115,8 @@ ga('send', 'pageview');
 <h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><p>经验风险 empirical risk：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$R_&#123;emp&#125;(f_θ)=1/N&#123;∑↙&#123;i=1&#125;↖N&#125;L(y_i,f(x_i,θ))$</div></pre></td></tr></table></figure></p>
 <p>模型为条件概率分布，损失函数为对数损失：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$L(P,P(Y|X)) = -lg(P(Y|X))$</div></pre></td></tr></table></figure></p>
 <p>经验风险最小：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$min(R_&#123;emp&#125;(f))  → R_&#123;emp&#125;^&#123;&apos;&#125;(f) = 0  → (1/N&#123;∑↙&#123;i=1&#125;↖N&#125;-lg(P(y_i|x_i)))^&apos; = 0 $</div></pre></td></tr></table></figure></p>
-<p>而极大对数平均似然定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$max(1\Nlg(L(θ))) = max(1\Nlg(P(x_1,x_2,...,x_n|θ)))$</div></pre></td></tr></table></figure></p>
-<p>若$P(X)$相互独立，则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$max(1\Nlg(P(x_1,x_2,...,x_n|θ))) = max(1\Nlg&#123;P(x_1|θ)P(x_2|θ)...P(x_n|θ)&#125;) →  (1\N&#123;∑↙&#123;i=1&#125;↖N&#125;lg(P(x_i|θ)))^&apos; = 0$</div></pre></td></tr></table></figure></p>
+<p>而极大对数平均似然定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$max(1/Nlg(L(θ))) = max(1/Nlg(P(x_1,x_2,...,x_n|θ)))$</div></pre></td></tr></table></figure></p>
+<p>若$P(X)$相互独立，则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$max(1/Nlg(P(x_1,x_2,...,x_n|θ))) = max(1/Nlg&#123;P(x_1|θ)P(x_2|θ)...P(x_n|θ)&#125;) →  (1/N&#123;∑↙&#123;i=1&#125;↖N&#125;lg(P(x_i|θ)))^&apos; = 0$</div></pre></td></tr></table></figure></p>
 <p>为何 $P(x_i|θ)$ 可以看作 $P(y_i|x_i) $ ?<br><strong>references:</strong><br><a href="http://www.cnblogs.com/liliu/archive/2010/11/22/1883702.html" target="_blank" rel="external">最大似然估计(Maximum likelihood estimation)</a></p>
 
       
@@ -130,6 +130,15 @@ ga('send', 'pageview');
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/07/24/test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2017/07/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -176,6 +185,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/24/test/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/07/23/solution1/">统计学习方法第一章习题解</a>
