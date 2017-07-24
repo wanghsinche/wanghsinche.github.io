@@ -1157,7 +1157,7 @@ a.article-title:hover {
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 22.400000000000002px;
+  height: auto;
 }
 .article-entry .highlight .line.marked {
   background: #515151;
