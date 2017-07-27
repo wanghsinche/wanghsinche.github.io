@@ -5,16 +5,16 @@
   
   <title>统计学习方法第二章总结 | シンちゃん</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
+  <meta name="description" content="感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ 学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 优化算法原始形式随机梯度下降，求 $y">
 <meta property="og:type" content="article">
 <meta property="og:title" content="统计学习方法第二章总结">
 <meta property="og:url" content="http://wanghsinche.github.io/2017/07/26/conclusion2/index.html">
 <meta property="og:site_name" content="シンちゃん">
-<meta property="og:description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
-<meta property="og:updated_time" content="2017-07-27T16:38:32.717Z">
+<meta property="og:description" content="感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ 学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 优化算法原始形式随机梯度下降，求 $y">
+<meta property="og:updated_time" content="2017-07-27T16:40:40.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="统计学习方法第二章总结">
-<meta name="twitter:description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
+<meta name="twitter:description" content="感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ 学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 优化算法原始形式随机梯度下降，求 $y">
   
     <link rel="alternate" href="/atom.xml" title="シンちゃん" type="application/atom+xml">
   
@@ -102,17 +102,16 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##感知机模型<br>感知机是根据输入实例的特征向量x，对其进行<strong>二类分类</strong>的<strong>线性分类模型</strong><br>数学形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$f(x)=sign(w•x+b)$</div></pre></td></tr></table></figure></p>
+        <h2 id="感知机模型"><a href="#感知机模型" class="headerlink" title="感知机模型"></a>感知机模型</h2><p>感知机是根据输入实例的特征向量x，对其进行<strong>二类分类</strong>的<strong>线性分类模型</strong><br>数学形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$f(x)=sign(w•x+b)$</div></pre></td></tr></table></figure></p>
 <p>对应输入空间（特征空间）中的超平面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$w•x+b=0$</div></pre></td></tr></table></figure></p>
-<p>##学习策略<br>极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$min L(w,b) = -&#123;∑↖m↙i=1&#125;y_i(w•x_i+b)$ </div><div class="line">m为误分类点</div></pre></td></tr></table></figure></p>
-<p>##优化算法</p>
-<p>###原始形式<br>随机梯度下降，求 $y_i(w•x_i+b)$ 对任意训练点均大于零，即没有误分类点<br>其中损失函数关于w、b的梯度为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$∇_wL = -&#123;∑↖m↙i=1&#125;y_ix_i$</div><div class="line">$∇_bL = -&#123;∑↖m↙i=1&#125;y_i$</div></pre></td></tr></table></figure></p>
+<h2 id="学习策略"><a href="#学习策略" class="headerlink" title="学习策略"></a>学习策略</h2><p>极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$min L(w,b) = -&#123;∑↖m↙i=1&#125;y_i(w•x_i+b)$ </div><div class="line">m为误分类点</div></pre></td></tr></table></figure></p>
+<h2 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h2><h3 id="原始形式"><a href="#原始形式" class="headerlink" title="原始形式"></a>原始形式</h3><p>随机梯度下降，求 $y_i(w•x_i+b)$ 对任意训练点均大于零，即没有误分类点<br>其中损失函数关于w、b的梯度为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$∇_wL = -&#123;∑↖m↙i=1&#125;y_ix_i$</div><div class="line">$∇_bL = -&#123;∑↖m↙i=1&#125;y_i$</div></pre></td></tr></table></figure></p>
 <p>因此每次迭代随机选取一个误分类点，令$w←w-∇_wL$、$b←b-∇_bL$，最终解得w、b  </p>
-<p>###对偶形式<br>如果w，b初值为0，每次迭代都有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$w←w+ηy_ix_i$</div><div class="line">$b←b+ηy_i$</div></pre></td></tr></table></figure></p>
+<h3 id="对偶形式"><a href="#对偶形式" class="headerlink" title="对偶形式"></a>对偶形式</h3><p>如果w，b初值为0，每次迭代都有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$w←w+ηy_ix_i$</div><div class="line">$b←b+ηy_i$</div></pre></td></tr></table></figure></p>
 <p>若$a_i$代表点i的迭代次数，学习率η=1，则最终的w可写为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$w=&#123;∑↖n↙i=1&#125;a_iy_ix_i$</div></pre></td></tr></table></figure></p>
 <p>目标变为使$y_i({∑↖n↙j=1}a_jy_jx_j•x_i+b)$ 对任意训练点均大于零<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a_i←a_i+1$（代表误分点迭代次数加一）</div><div class="line">$b←b+y_i$</div></pre></td></tr></table></figure></p>
 <p>其中x_j•x_i可以事先用Gram矩阵存储</p>
-<p>##算法收敛性<br>若数据集线性可分，则算法收敛，误分类次数k有如下性质<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$k≦(R/ϒ)^2$</div></pre></td></tr></table></figure></p>
+<h2 id="算法收敛性"><a href="#算法收敛性" class="headerlink" title="算法收敛性"></a>算法收敛性</h2><p>若数据集线性可分，则算法收敛，误分类次数k有如下性质<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$k≦(R/ϒ)^2$</div></pre></td></tr></table></figure></p>
 <p>R与|x|最大值有关</p>
 
       
