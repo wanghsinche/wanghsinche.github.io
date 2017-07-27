@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>统计学习方法第二章总结 | シンちゃん</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计学习方法第二章总结">
+<meta property="og:url" content="http://wanghsinche.github.io/2017/07/26/conclusion2/index.html">
+<meta property="og:site_name" content="シンちゃん">
+<meta property="og:description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
+<meta property="og:updated_time" content="2017-07-27T16:38:32.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="统计学习方法第二章总结">
+<meta name="twitter:description" content="##感知机模型感知机是根据输入实例的特征向量x，对其进行二类分类的线性分类模型数学形式：1$f(x)=sign(w•x+b)$ 对应输入空间（特征空间）中的超平面1$w•x+b=0$ ##学习策略极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即12$min L(w,b) = -&amp;#123;∑↖m↙i=1&amp;#125;y_i(w•x_i+b)$ m为误分类点 ##优化算法 ###原始形式随">
+  
+    <link rel="alternate" href="/atom.xml" title="シンちゃん" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Source+Code+Pro|UnifrakturMaguntia" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-103050265-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">シンちゃん</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wanghsinche.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-conclusion2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/26/conclusion2/" class="article-date">
+  <time datetime="2017-07-26T09:00:00.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/统计学习方法/">统计学习方法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      统计学习方法第二章总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##感知机模型<br>感知机是根据输入实例的特征向量x，对其进行<strong>二类分类</strong>的<strong>线性分类模型</strong><br>数学形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$f(x)=sign(w•x+b)$</div></pre></td></tr></table></figure></p>
+<p>对应输入空间（特征空间）中的超平面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$w•x+b=0$</div></pre></td></tr></table></figure></p>
+<p>##学习策略<br>极小化损失函数，损失函数对应误分类点与超平面之间的总距离，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$min L(w,b) = -&#123;∑↖m↙i=1&#125;y_i(w•x_i+b)$ </div><div class="line">m为误分类点</div></pre></td></tr></table></figure></p>
+<p>##优化算法</p>
+<p>###原始形式<br>随机梯度下降，求 $y_i(w•x_i+b)$ 对任意训练点均大于零，即没有误分类点<br>其中损失函数关于w、b的梯度为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$∇_wL = -&#123;∑↖m↙i=1&#125;y_ix_i$</div><div class="line">$∇_bL = -&#123;∑↖m↙i=1&#125;y_i$</div></pre></td></tr></table></figure></p>
+<p>因此每次迭代随机选取一个误分类点，令$w←w-∇_wL$、$b←b-∇_bL$，最终解得w、b  </p>
+<p>###对偶形式<br>如果w，b初值为0，每次迭代都有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$w←w+ηy_ix_i$</div><div class="line">$b←b+ηy_i$</div></pre></td></tr></table></figure></p>
+<p>若$a_i$代表点i的迭代次数，学习率η=1，则最终的w可写为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$w=&#123;∑↖n↙i=1&#125;a_iy_ix_i$</div></pre></td></tr></table></figure></p>
+<p>目标变为使$y_i({∑↖n↙j=1}a_jy_jx_j•x_i+b)$ 对任意训练点均大于零<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$a_i←a_i+1$（代表误分点迭代次数加一）</div><div class="line">$b←b+y_i$</div></pre></td></tr></table></figure></p>
+<p>其中x_j•x_i可以事先用Gram矩阵存储</p>
+<p>##算法收敛性<br>若数据集线性可分，则算法收敛，误分类次数k有如下性质<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$k≦(R/ϒ)^2$</div></pre></td></tr></table></figure></p>
+<p>R与|x|最大值有关</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wanghsinche.github.io/2017/07/26/conclusion2/" data-id="cj5mny8oh00001109q5xxzb4p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/23/solution1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">统计学习方法第一章习题解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/统计学习方法/">统计学习方法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/26/conclusion2/">统计学习方法第二章总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/23/solution1/">统计学习方法第一章习题解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/20/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">info</h3>
+    <div class="widget">
+      <a href="https://github.com/wanghsinche">my github</a>
+    </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 wanghsinche@hotmail.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/mathscribe/jqmath-0.4.3.css">
+  <script src="/mathscribe/jqmath-etc-0.4.6.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
